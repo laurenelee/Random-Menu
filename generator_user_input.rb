@@ -12,17 +12,17 @@ protein = []
 # Ask user to provide menu items and create array
 puts "\nPlease provide #{num} adjectives: "
 num.times do
-adj << gets.chomp
+  adj << gets.chomp
 end
 
 puts "Now, provide #{num} cooking styles: "
 num.times do
-style << gets.chomp
+  style << gets.chomp
 end
 
 puts "Lastly, provide #{num} foods: "
 num.times do
-protein << gets.chomp
+  protein << gets.chomp
 end
 
 puts "Thank you for your input!"

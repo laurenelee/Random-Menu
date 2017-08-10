@@ -28,9 +28,8 @@ end
 puts "Thank you for your input!"
 
 # to avoid duplicates, create a NEW array from OG array!
-adj_arr = adj.shuffle
-style_arr = style.shuffle
-protein_arr = protein.shuffle
+adj_arr, style_arr, protein_arr = adj.shuffle, style.shuffle, protein.shuffle
+
 
 # output message
 # randomly pulls one item from each array

@@ -8,40 +8,25 @@ puts "Okay, if you'd like to see #{num} menu options, \nyou unfortunately need t
 adj = []
 style = []
 protein = []
+array = [adj, style, protein]
 
-# Ask user to provide menu items and create array
-puts "\nPlease provide #{num} adjectives: "
-num.times do
-  adj << gets.chomp
-end
+prompts = ["Now, provide #{num} adjectives: ",
+  "Now, provide #{num} cooking styles: ",
+  "Please provide #{num} foods: "]
 
-puts "Now, provide #{num} cooking styles: "
-num.times do
-  style << gets.chomp
-end
+  3.times do |i|
+    puts "#{prompts[i-1]}"
+    num.times do
+      array[i] << gets.chomp
+    end
+  end
 
-puts "Lastly, provide #{num} foods: "
-num.times do
-  protein << gets.chomp
-end
+  puts "Below is the menu you created!"
+  adj_sample = array[2].sample(num)
+  style_sample = array[1].sample(num)
+  protein_sample = array[0].sample(num)
 
-puts "Thank you for your input!"
-
-# to avoid duplicates, create a NEW array from OG array!
-adj_arr, style_arr, protein_arr = adj.shuffle, style.shuffle, protein.shuffle
-
-
-# output message
-# randomly pulls one item from each array
-puts "\nBelow are your menu options:"
-num.times do |i|
-  puts "#{i + 1}: #{adj_arr[i]} #{style_arr[i]} #{protein_arr[i]}"
-  i += 1
-end
-
-# attempt to create an array within array
-# num.times do |i|
-# arr_array = [adj_arr, style_arr, protein_arr]
-# puts arr_array[][i][i]
-# i += 1
-# end
+  num.times do |i|
+    puts "#{i + 1}: #{adj_sample[i]} #{style_sample[i]} #{protein_sample[i]}"
+    i += 1
+  end
